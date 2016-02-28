@@ -1,4 +1,4 @@
-
+/*git devtest*/
 function testFunc(){
 var enter = document.getElementById("id1").value;
 localStorage.setItem("first", enter);
