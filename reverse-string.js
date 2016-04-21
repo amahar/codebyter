@@ -15,7 +15,7 @@ function strLoop(str){
 
 	var revStr = '';
 	for(var i = str.length-1;i>=0;i--){
-		var revStr = revStr + str.charAt(i);
+		 revStr+= str.charAt(i);
 	}
 		return revStr;
 }
@@ -46,3 +46,4 @@ function strDbArr(str){
 		return revStr.join('');
 }
 console.log(strDbArr(str));
+
