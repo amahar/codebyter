@@ -117,6 +117,9 @@ var journal = [
   {"events":["cauliflower","peanuts","brushed teeth","weekend"],"squirrel":false}
 ];
 
+
+//how the above entries for journal[] were created
+
 console.log(journal);
 console.log(journal[0]);
 console.log(journal[0].events);
