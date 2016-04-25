@@ -127,8 +127,6 @@ console.log(journal[0].events[0]);
 console.log(journal[0].squirrel);
 
 
-// how the above entries for journal[] were created
-
 var journalex = [];
 
 function addEntry(events, didTurnSquirrel) {
