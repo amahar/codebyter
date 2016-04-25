@@ -55,18 +55,18 @@ var newstr = 'we are going to return this';
 // console.log(letters);
 
 
+// var str = 'hellodavidthisisatestofobjectusage';
+// var letters = {};
+
+// for (var x = 0, y = str.length; x < y; x++) {
+// letters[str[x]] = letters[str[x]] ? letters[str[x]] + 1 : 1;
+// }
+// console.log(letters);
+
 var str = 'hellodavidthisisatestofobjectusage';
 var letters = {};
 
-for (var x = 0, y = str.length; x < y; x++) {
-letters[str[x]] = letters[str[x]] ? letters[str[x]] + 1 : 1;
-}
-console.log(letters);
-
-var str = 'hellodavidthisisatestofobjectusage';
-var letters = {};
-
-for (var x = 0, y = str.length; x < y; x++) {
+for (var x = 0; x < str.length; x++) {
 	if(letters[str[x]]){
 		letters[str[x]] = letters[str[x]] + 1;
 	} else {
@@ -91,22 +91,22 @@ console.log(letters);
 
 
 
-var str = 'coconut';
-var strin = [];
-	for(i=0; i < str.length; i++ ){
+// var str = 'coconut';
+// var strin = [];
+// 	for(i=0; i < str.length; i++ ){
 
-		var l = str.charAt(i);
-// you are undefining 'string[l]' untill you assign a value '1' to it. 
+// 		var l = str.charAt(i);
+// // you are undefining 'string[l]' untill you assign a value '1' to it. 
 
- 		console.log(strin[l]);
-		 if(isNaN(strin[l])){ 
-		 	strin[l] = 1;
-		 } else {
-		 	strin[l] = strin[l] + 1; 
-		 }
-	}
+//  		console.log(strin[l]);
+// 		 if(isNaN(strin[l])){ 
+// 		 	strin[l] = 1;
+// 		 } else {
+// 		 	strin[l] = strin[l] + 1; 
+// 		 }
+// 	}
 
 
-for(key in strin) {
-	console.log(key + ' :: ' + strin[key]);
-}
+// for(key in strin) {
+// 	console.log(key + ' :: ' + strin[key]);
+// }

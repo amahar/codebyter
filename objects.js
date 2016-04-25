@@ -45,6 +45,7 @@ var house = {
 	color:'blue',
 	windows:'clear',
 	rooms: ['master', 'living', 'guest']
+	//garage: two; 
 
 };
 

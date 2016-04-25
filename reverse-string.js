@@ -22,7 +22,7 @@ function strLoop(str){
 
 console.log(strLoop(str));
 
-//Reverse string using single array method
+//Reverse string using single array method, we can use str[i] because string can be treated like an array here. 
 
 function strArr(str){
 
