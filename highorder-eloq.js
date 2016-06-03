@@ -1,13 +1,7 @@
-// function forEach(array, action) {
 
-// 	for (i=0; i < array.length; i++)
-// 		action(array[i]);
-	
-// }
 
-// forEach(['asim','learning','high','order'],alert);
-
-// high order 
+// high order function because it is returning a function
+// also Closure is closing over a scoped variable, in this case the input argument n.
 
 function greaterThan(n) {
   return function(m) { 
