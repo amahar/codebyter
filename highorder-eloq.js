@@ -63,3 +63,44 @@ repeat(3, function(n) {
 });
 // → 0 is even
 // → 2 is even
+
+//simpler examples - from sitepoint for high order functions
+//taking function as an argument
+var proveIt = function() {
+  alert("you triggered " + this.id);
+};
+
+document.getElementById("clicker").addEventListener("click", proveIt);
+
+
+
+
+//returning function as results
+var attitude = function(original, replacement, source) {
+  return function(source) {
+    return source.replace(original, replacement);
+  };
+};
+
+var snakify = attitude(/millenials/ig, "Snake People");
+var hippify = attitude(/baby boomers/ig, "Aging Hippies");
+
+console.log(snakify("The Millenials are always up to something."));
+// The Snake People are always up to something.
+console.log(hippify("The Baby Boomers just look the other way."));
+// The Aging Hippies just look the other way.
+
+
+
+
+//predefined map 
+function findLength(str) { return str.length }
+ 
+var lengths = ["cat", "it", "banana", "fish", "do", "dodo"].map(findLength);
+console.log(lengths); // [3, 2, 6, 4, 2, 4]
+
+//same result as above
+var lengths = ["cat", "it", "banana", "fish", "do", "dodo"].map(function(str) {
+  return str.length;
+});
+console.log(lengths); // [3, 2, 6, 4, 2, 4]

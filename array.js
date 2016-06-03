@@ -1,5 +1,5 @@
  // all about arrays: Arrays are created to access multiple values 
-
+var memory = ['stack', 'heap', 'virtual'];
 //**************
 //create an array using, array literal
 
@@ -61,16 +61,39 @@ for (i=0;i < memory.length; i++){
 	 console.log(memory[i]);
 }
 
+
+
+//passing array as a function parameter - from eloquent
+function loopOver(arr, arg){
+	for(i=0;i<arr.length;i++)
+		arg(arr[i]);
+}
+loopOver(['newarray','testarray','outputarray'],alert);
+
+//another example - create function value on spot - from eloquent
+//notice how the loopover function is calling another function as an argument
+var numbers = [1, 2, 3, 4, 5], sum = 0;
+loopOver(numbers, function(item) {
+  sum += item;
+});
+console.log(sum);
+// → 15
+
  //**********
- //another method to loop over
+ //another method (forEach) to loop over
 
 methodTwo = '';
-memory.forEach(function (item, index, array){
+memory.forEach(function (item, index){
 	
-	methodTwo += item;
+	methodTwo += item+' ';
 });
 
 console.log(methodTwo);
+
+
+
+
+
 
 
 
