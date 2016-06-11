@@ -126,6 +126,14 @@ console.log(journal[0].events);
 console.log(journal[0].events[0]);
 console.log(journal[0].squirrel);
 
+//since the var 'journal' is also a JSON, we could apply the following functions
+
+var string = JSON.stringify(journal); // convert the above into string //I guess this could come handy, because JSON
+//data do not have a variable assigned. 
+console.log(string);
+console.log(JSON.parse(string));
+console.log(JSON.parse(string)[0]); // same result as 'console.log(journal[0]);'
+
 
 var journalex = [];
 
@@ -140,3 +148,4 @@ function addEntry(events, didTurnSquirrel) {
 addEntry(['eating', 'walking', 'running'], false);
 
 console.log(journalex);
+console.log(journal);
