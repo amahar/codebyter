@@ -78,11 +78,7 @@ console.log(ancestryObject.length);
 
 //Just like forEach, Filter is standard JS method
 
-function per(p){
-  return p.born > 1900 && p.born < 1925; 
-}
 
-console.log(ancestryObject.filter(per));
 
 console.log(ancestryObject.filter(function(person){
   return person.born > 1900 && person.born < 1925; 
@@ -92,6 +88,13 @@ console.log(ancestryObject.filter(function(person){
 
   return person.father == 'Carel Haverbeke';
 }));
+
+//we can also call filter in the following manner:
+function per(p){
+  return p.born > 1900 && p.born < 1925; 
+}
+
+console.log(ancestryObject.filter(per));
 
 //working with map 
 //this is what map actually does:
@@ -199,8 +202,7 @@ console.log(ancestryObject.filter(function(person) {
 console.log(ancestryObject.filter(isInSet.bind(null, theSet)));
 // → … same result
 
-//example
-
+//example using a reduce and concat array methods
 var arrays = [[1, 2, 3], [4, 5], [6]];
 
 console.log(arrays.reduce(function(a,b){
@@ -209,5 +211,23 @@ console.log(arrays.reduce(function(a,b){
 
 }));
 
+//example average age for male
+var male = ancestryObject.filter(function(sexVal){
 
+  return sexVal.sex == 'm'; 
+
+});
+
+var maleAge = male.map(function(age){
+  return age.died - age.born; 
+});
+console.log(maleAge);
+
+function average(p, b){
+
+  console.log(maleAge.length);
+  return (p + b);
+}
+
+console.log(maleAge.reduce(average)/maleAge.length);
 

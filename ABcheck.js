@@ -1,4 +1,4 @@
-str = 'aftes it';
+str = 'afbatka it';
 function ABCheck(str) { 
 
     for(i=0;i<str.length;i++){
@@ -27,7 +27,7 @@ console.log(ABCheck(str));
 //another example, and notice how |(or) is used in the expression; 
 function ABCheck(str) { 
   patt = /(a...b|b...a)/
-    
+    console.log(patt);
     return patt.test(str); 
 }
 console.log(ABCheck(str)); 
