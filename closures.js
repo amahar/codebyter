@@ -31,6 +31,8 @@ console.log(retinaMacbook1.USB); //logs out "myUSB"
 console.log(retinaMacbook.RAM) //logs out undefinedd
 
 
+// this will have to be moved to function file
+
 function construct(){
 
     //this.person = person;
@@ -45,3 +47,19 @@ function construct(){
 
 var newName = new construct();
 console.log(newName.name);
+
+// is this considered a closure ?
+var test = function(){
+
+var ret = "test this";
+
+    return{
+        best: function (){
+            console.log(ret);
+        }
+    };
+
+}
+
+var x = test();
+x.best();
