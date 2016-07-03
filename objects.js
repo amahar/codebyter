@@ -49,7 +49,17 @@ var house = {
 
 };
 
+// iterates over enumerable properties
+for (var key in house) {
 
+	console.log('key : '+ key + ' value : ' + house[key]);//key : color value : blue //key : windows value : clear
+														  //key : rooms value : master,living,guest
+}
+//notice if we do this without the for..in loop
+//console.log(house[color]);// error color is not defined //above 'house[key]' works because key has been defined as a var
+
+
+console.log(house['color']); //blue
 var asimHouse = Object.create(house);
 console.log(asimHouse.color);
 console.log(asimHouse['windows']);// access property using [] notation
@@ -165,11 +175,31 @@ function ColoredTriangle() {
 
 var obj = new ColoredTriangle();
 
-for (var prop in obj) {
-  if( obj.hasOwnProperty( prop ) ) {
-    console.log("obj." + prop + " = " + obj[prop]);
+console.log(obj); // ColoredTriangle {color: "red"}
+for (var key in obj) {
+  if( obj.hasOwnProperty(key) ) {
+    console.log("obj." + key + " = " + obj[key]);//obj.color = red
+    console.log(obj.key);// undefined
+    console.log(obj['key']);//undefined
+    console.log(obj[key]); //red
   } 
 }
 
-// Output:
-// "obj.color = red"
+
+
+//object.keys - from david walsh article - compare this with example above with 'hasOwnProperty':
+
+var person = {
+  firstName: 'David',
+  lastName: 'Walsh',
+  // ...
+};
+
+ Object.keys(person).forEach(function(trait) {
+	console.log(trait);
+  console.log('Person ', trait,': ', person[trait]);
+});
+
+//same as above solution 
+var newobj = Object.keys(person);
+console.log(person[newobj[0]]);

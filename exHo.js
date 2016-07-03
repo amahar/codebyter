@@ -28,13 +28,13 @@ console.log(ExOh(str));
 var strr = "o";
 function ExOhh(strr) { 
 
-	var zeroes = strr.split(/x/i);
-		console.log(zeroes);
-	 console.log(zeroes.length); 
-   // return strr.split(/x/i).length === strr.split(/o/i).length; 
-   var axes = strr.split(/o/i);
-   console.log(axes);
-	console.log(axes.length); 
+	var zeroes = strr.split(/x/i).length; 
+    var axes = strr.split(/o/i).length;
+
+   return zeroes == axes;
+
+   //or we could simply do this:
+   //// return strr.split(/x/i).length === strr.split(/o/i).length; 
          
 }
    

@@ -148,6 +148,7 @@ console.log(byName["Philibert Haverbeke"]);
 
 
 
+
 // function reduceAncestors(person, f, defaultValue) {
 //   function valueFor(person) {
 //     if (person == null)
@@ -202,7 +203,9 @@ console.log(ancestryObject.filter(function(person) {
 console.log(ancestryObject.filter(isInSet.bind(null, theSet)));
 // → … same result
 
-//example using a reduce and concat array methods
+
+
+//example - eloquent - using a reduce and concat array methods
 var arrays = [[1, 2, 3], [4, 5], [6]];
 
 console.log(arrays.reduce(function(a,b){
@@ -211,23 +214,59 @@ console.log(arrays.reduce(function(a,b){
 
 }));
 
-//example average age for male
+
+
+
+//example - eloquent - average age for male
+
+//obtain all males
 var male = ancestryObject.filter(function(sexVal){
 
   return sexVal.sex == 'm'; 
-
 });
+console.log(male);
 
+//get ages for all males
 var maleAge = male.map(function(age){
   return age.died - age.born; 
 });
 console.log(maleAge);
 
+//run the average with reduce method below
 function average(p, b){
-
-  console.log(maleAge.length);
   return (p + b);
 }
-
 console.log(maleAge.reduce(average)/maleAge.length);
+
+function average1(array) {
+  function plus(a, b) { return a + b; }
+  return array.reduce(plus) / array.length;
+}
+
+var byName = {};
+ancestryObject.forEach(function(person) {
+  byName[person.name] = person;
+});
+
+// var mother = ancestryObject.filter(function(person){
+//   return byName[person.mother]!= null;
+// }).map(function(person) {
+//   return person.born - byName[person.mother].born;
+// });
+
+// console.log(average1(mother));
+// → 31.2
+
+var mother = ancestryObject.filter(function(person){
+  return byName[person.mother];
+})
+
+var mother1 = ancestryObject.filter(function(person){
+  return person.mother;
+})
+
+console.log(mother);
+console.log(mother1);
+console.log(ancestryObject.length); 
+
 
