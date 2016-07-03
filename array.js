@@ -90,23 +90,3 @@ memory.forEach(function (item, index){
 
 console.log(methodTwo);
 
-///
-var arraySize = [];
-arraySize[5] = 5;
-console.log(arraySize.length); //6 
-for (var key in arraySize) {
-	console.log(arraySize[key]);
-	console.log(arraySize.length);
-}
-for(var i=0; i<arraySize.length; i++) {
-
-	console.log(arraySize[i]);
-	console.log(arraySize.length);
-}
-
-
-
-
-
-
-

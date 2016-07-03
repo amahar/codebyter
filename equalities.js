@@ -12,6 +12,8 @@ console.log(object1 == object2);
 console.log(object1 == object3);
 console.log(object1 === object3);
 
+//things to find out in future: how find out if the values equal in two objects
+
 
 
 
