@@ -8,14 +8,14 @@ var memory = ['stack', 'heap', 'virtual'];
 var access = memory[0];
 var accTest = memory["1"];		//we can also access properties surrounded in quotes, which is one of the
 var length = memory["length"];  //two ways to access property, other one being the dot notation.  
-console.log(memory.length);
+console.log(memory.length);//3
 console.log(memory.stack); //undefined	
-console.log(memory)                               
-console.log(access);                               
-console.log(accTest);
-console.log(length);
-console.log(memory[0]);
-console.log(memory[1]);
+console.log(memory);// ["stack", "heap", "virtual"]                               
+console.log(access);// stack                               
+console.log(accTest);// heap
+console.log(length);// 3
+console.log(memory[0]);// stack
+console.log(memory[1]);//  heap
 
 //console.log(memory.0);// error
 return memory;
@@ -90,7 +90,19 @@ memory.forEach(function (item, index){
 
 console.log(methodTwo);
 
+///
+var arraySize = [];
+arraySize[5] = 5;
+console.log(arraySize.length); //6 
+for (var key in arraySize) {
+	console.log(arraySize[key]);
+	console.log(arraySize.length);
+}
+for(var i=0; i<arraySize.length; i++) {
 
+	console.log(arraySize[i]);
+	console.log(arraySize.length);
+}
 
 
 
