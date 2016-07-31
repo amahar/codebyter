@@ -55,11 +55,57 @@ var ret = "test this";
 
     return{
         best: function (){
-            console.log(ret);
+           return ret;
         }
     };
 
 }
 
 var x = test();
-x.best();
+console.log(x.best()); // test this
+console.log(x.test); // undefined
+
+
+
+/////////basic example of closures from javascriptissexy.com
+function showName(firstName, lastName){
+    var nameIntro = "my name is ";
+
+    function makeFullName() {
+        return nameIntro + firstName + ' ' + lastName;
+    }
+
+    return makeFullName(); 
+}
+
+console.log(showName('Michael', 'Jackson'));
+
+
+//another example
+
+function celebrityName (firstName) {
+    var nameIntro = "This celebrity is ";
+    // this inner function has access to the outer function's variables, including the parameter​
+   function lastName (theLastName) {
+        return nameIntro + firstName + " " + theLastName;
+    }
+    return lastName;
+}var mjName = celebrityName ("Michael"); // At this juncture, the celebrityName outer function has returned.​
+console.log(mjName ("Jackson")); // This celebrity is Michael Jackson 
+
+function celebrityIDCreator (theCelebrities) {
+    var i;
+    var uniqueID = 100;
+    for (i = 0; i < theCelebrities.length; i++) {
+      theCelebrities[i]["id"] = function ()  {
+        return uniqueID + i;
+      }
+    }
+    return theCelebrities;
+}
+var actionCelebs = [{name:"stallone", id:0},{name:"Cruise",id:0},{name:"willis",id:0}];
+var createIdForActionCelebs = celebrityIDCreator (actionCelebs);
+var stalloneID = createIdForActionCelebs [0];  
+console.log(stalloneID.id()); // 103
+
+

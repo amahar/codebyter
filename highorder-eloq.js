@@ -98,3 +98,14 @@ var lengths = ["cat", "it", "banana", "fish", "do", "dodo"].map(function(str) {
   return str.length;
 });
 console.log(lengths); // [3, 2, 6, 4, 2, 4]
+
+
+
+var arrex = [25,56,98,56,25];
+
+var runarrex = arrex.filter(function(item){
+  return item > 50;
+});
+console.log(runarrex);
+
+
