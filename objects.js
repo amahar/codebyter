@@ -111,6 +111,7 @@ function Person(name,age,sex){
 	this.sex = sex;
 }
 
+
 var asim = new Person("Asim Mahar",37,"Male");
 console.log(asim);
 console.log(asim.name);
@@ -122,6 +123,9 @@ function Airplane(model,year,manuf,owner){
 	this.owner = owner;
 }
 
+var asim = new Person("Asim Mahar",37,"Male");
+
+//notice how 'asim' object is being passed as a parameter: very important concept
 var myPlane = new Airplane(320,2016,"Boeing",asim);
 console.log(myPlane.model);
 console.log(myPlane.manuf);
@@ -131,6 +135,8 @@ console.log(myPlane.owner);
 
 console.log(myPlane.owner.name);
 console.log(myPlane.owner.age);
+console.log(asim.name);
+
 
 //**************************************************
 
