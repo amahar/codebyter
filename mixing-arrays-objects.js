@@ -58,7 +58,7 @@ car.engine = function(param){
 	return "four cylinder" == param?"honda":"bmw";
 }
 console.log(car.type.wolkswagon);//passat
-console.log(car.engine("six cylinder"));
+console.log(car.engine("six cylinder"));//bmw 
 
 var golf = {};
 golf.ball = {
