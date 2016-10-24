@@ -29,30 +29,9 @@ $(function(){
 	//2. $(selector).html(content) // set the content 
 	$('#html').html('<p>this is the new html paragraph</p>');  // ---> the .html() will overrides the content
 	$('#html').append('<p>this is the appended paragraph</p>'); // ----> the .append() just adds onto the content
-	var getFlex = $('<div>', {id:'html', class:'getFlex'});
+	var getFlex = $('<div>', {id:'html', class:'getFlex'}); //To create a new div, once can take this approach for better flexibility: source: http://stackoverflow.com/questions/10619445/the-prefered-way-of-creating-a-new-element-with-jquery
 	$('#html').append(getFlex);
 
-
-
-// var CANVAS_WIDTH = 245,
-// 	CANVAS_HEIGHT = 500;
-
-//  var canvasElement = $("<canvas width='" + CANVAS_WIDTH + 
-//           "' height='" + CANVAS_HEIGHT + "'></canvas");
-//         // var canvas = canvasElement.get(0).getContext("2d");
-//         // canvasElement.appendTo('body');
-// console.log(canvasElement);
-// console.log(canvasElement[0]);
-//console.log(canvas);
-var a = document.createElement('P');
-document.getElementById('create-element').appendChild(a);
-var b = document.getElementById('create-element');
-console.log(b);
-
-var x = document.getElementById('input');
-console.log(x);
-var y = document.getElementsByTagName('p');
-console.log(y); 
 });
 
 
@@ -60,16 +39,18 @@ console.log(y);
 	//finding out what is $('selector')[0];
 	var test1 = $('#input');
 	var test2 = $('#input')[0]; //this is same as document.getIdByName(input);
-	var test3 = $('#input')[1];
+	var test3 = $('#input').get(0); // same as above --> to pull native DOM from Jquery object per: https://learn.jquery.com/using-jquery-core/faq/how-do-i-pull-a-native-dom-element-from-a-jquery-object/
+	var test4 = $('#input')[1];
 	console.log(test1);
 	console.log(test2);
 	console.log(test3);
-	console.log(test1.title);
+	console.log(test4);
+	console.log(test1[0].title);//returns 'testtile' as expected
+	console.log(test1.get(0).title); // same as above
 	//console.log(test2.title);
 
 
 	$('#event-input').data('name','data works');
-	console.log($('#event-input').data('name'));
-	console.log($('#event-output').data('name'));
+	console.log($('#event-input').data('name'));//data works
 
 

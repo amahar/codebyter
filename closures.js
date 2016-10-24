@@ -48,7 +48,7 @@ function construct(){
 var newName = new construct();
 console.log(newName.name);
 
-// is this considered a closure ?
+// is this considered a closure ? this should be, because var ret is private can't be accessed from outside
 var test = function(){
 
 var ret = "test this";
