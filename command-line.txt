@@ -1,0 +1,2 @@
+we are creating this file from command line
+now we are going to concatenate this sentence to the same file

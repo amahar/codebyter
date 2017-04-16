@@ -1,0 +1,37 @@
+<!-- source of tutorial:http://code.stephenmorley.org/html-and-css/hiding-rules-with-the-negation-pseudo-class/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pseudo not</title>
+	<style type="text/css">
+		input {
+			display: block;
+		}
+		.otherOption:not(old) div {
+			display: none;
+		}
+		.otherOption:not(old) input:checked + label + div {
+			display: block; 
+		}
+	</style>
+</head>
+<body>	
+
+		<div>
+			<input type="radio" id="first" name="test" value="first">
+			<label for="first">first</label>
+			<input type="radio" id="second" name="test" value="second">
+			<label for="second">second</label>
+
+		</div>
+		<div class="otherOption">
+			<input id="optionOther" type="radio" name="test" value="other">
+			<label for="optionOther">Other</label>
+			<div>
+				<input type="text" id="other" name="text">
+				<label for="other"></label>
+			</div>
+		</div>
+</body>
+</html>

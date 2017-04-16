@@ -6,9 +6,12 @@ $(function(){
 
 	//.attr(); 
 	//1. $(selector).attr(attribute) - return the value of attribute
-	var attr = $('p').attr('title');// title is the attribute on index page -> attr now = value of 'title'
-	$('#input').text(attr); // add the attr value to #input
-	console.log(attr);// atrribute jquery, which is the value of 'title'
+	var attribute = $('p').attr('title');// title is the attribute on index page -> attr now = value of 'title'
+	console.log(attribute);//attribute jquery
+	$('p:nth-child(2)').attr(attribute);//this doesn't work because of the passing incorrect arguments
+	$('p:nth-child(2)').attr('value','name');
+	$('#input').text(attribute); // add the attr value to #input
+	console.log(attribute);// atrribute jquery, which is the value of 'title'
 
 	//2.$(selector).attr(attribute, value) - set the attribute and its value to object
 	$('p').attr('class', 'class added');

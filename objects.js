@@ -85,6 +85,7 @@ var house1 = new Object();
 // three ways to assign values to the p
 house1.color = "purple";
 house1["windows"] = "dusty";
+console.log(house1[stringProp]);//udefined because 'stringProp' is not part of the house1 object 
 house1[stringProp] = "newName";//assigned a variable declared above, stringProp = "changename";
 							   //since stringProp is a variable, we don't assign quotes
 
@@ -93,7 +94,7 @@ console.log(house1["color"]);
 console.log(house1.color);
 console.log(house1["windows"]);//access property using [] notation
 console.log(house1.windows); //access prooerty using dot method
-console.log(house1[stringProp]);
+console.log(house1[stringProp]);// ->newName, because on line 89 we assigned the variable to "newName" value
 
 console.log(house1);
 
