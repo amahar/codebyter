@@ -11,8 +11,13 @@ drone = {};
 // assigning values using .(dot) method
 drone.copter = "four";
 drone.camera = "20MP";
+drone.blades = function() {
+  return console.log('lets fly');
+
+}
 console.log(drone.copter);
 console.log(drone.camera);
+console.log(drone.blades());//lets fly 
 
 // assigning values using the [] notation
 
