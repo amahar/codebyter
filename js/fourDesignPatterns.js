@@ -9,6 +9,7 @@ var HTMLChanger = (function() {
 
 	var changeHTML = function(){
 		var element = document.getElementById('input');
+		console.log(element);
 		element.innerHTML = contents; 
 	}
 
@@ -31,7 +32,8 @@ var Exposer = function(){
 	var privateMethod = function(){
 		console.log('Inside a private method');
 		privateVariable++; 
-		console.log(privateVariable);
+		//console.log(privateVariable);
+		return privateVariable; 
 	}
 
 	var methodToExpose = function() {
@@ -49,11 +51,12 @@ var Exposer = function(){
 	};
 	
 }(); 
-
 Exposer.first();//output: This is a method I want to expose!
 Exposer.second();//output: Inside a private method!
 Exposer.methodToExpose; //underfined
 Exposer.third();//output: inisde a private method
+console.log(Exposer.third());//ouput: 13 
+console.log(Exposer.privateVariable);//output: undefined
 
 
 //prototype design pattern

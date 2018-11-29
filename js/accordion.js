@@ -2,7 +2,9 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
+	alert(1);
     acc[i].onclick = function(){
+    	alert(2);
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
         if (panel.style.display === "block") {

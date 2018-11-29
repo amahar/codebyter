@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>passing by reference</title>
+</head>
+<body>
+	
+<script>
+	//following is an example from lecture 55 from the Udemy course 'the complete javascript course'
+	//thing to notice is that when the 'obj' is being passed in the 'change' function the parameter value is 'r' but still 
+	//is referencing to the correct place (which is the obj)
+	var age = 27; 
+	var obj = { 
+		name: 'jonas', 
+		city: 'lisbon'
+	}; 
+	function change(a, r){ 
+		var a = 30; 
+		r.city = 'San Fransisco';
+	} 
+	change(age, obj); 
+	console.log(age);//27  
+	console.log(obj.city);//San Fransisco 
+
+</script>
+</body>
+</html>

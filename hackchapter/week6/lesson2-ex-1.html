@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var user = {
+     		name: 'Michael Jordan',
+     		profession: 'Athlete',
+     		sport: 'Basket Ball',
+     		team: 'Chicago Bulls'
+		}
+		//We can access values in two different ways, below are the examples of each.
+		//example 1 -> this approach is used more often 
+		console.log(user.name);//Michael Jordan
+		console.log(user.profession);//Athlete
+		//Practice: Go ahead and get the values for the last two properties
+		 
+		//example 2 -> this approach is less common
+		console.log(user['name']);//Michael Jordan
+		console.log(user['profession']);//Athlete
+		//Practice: Go ahead and get the values for the last two properties
+		 
+		//We can assign values in two different ways, below are the examples of each.
+		//example 1
+		user.name = 'Joe Montana';
+		user.sport = 'Football'
+		console.log(user.name);//Joe Montana
+		console.log(user.sport);//Football
+		 
+		//example 2
+		user['name'] = 'Cal Ripken';
+		user['sport'] = 'Baseball';
+		user['jersey number'] = 8;
+		console.log(user['name']);//Cal Ripken
+		console.log(user['sport']);//Baseball
+		console.log(user['jersey number']);//8
+	</script>
+</body>
+</html>

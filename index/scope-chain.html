@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scope chain</title>
+</head>
+<body>
+	
+</body>
+<!-- Example of scope chain. function second() goes up the chain to lool for variables. -->
+<script type="text/javascript">
+	
+	var a = 'asim';
+
+	function first() {
+		var b = 'john';
+		second(); //notice how the function is called before the declartion, this is because of hoisting.
+
+		function second() {
+			var c = 'smith';
+			console.log(`${a} ${b} ${c}`)// asim john smith. Also notices we have access to global context (var a)from this scope.
+		}
+
+	}
+	first();
+
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	body {
+		height: 2000px; 
+	}
+</style>
+<body>
+	
+  <h2>Enter any key to change this text</h2>
+  <h1></h1>
+<script>
+  document.addEventListener('scroll', function(){
+  	document.querySelector('h1').innerHTML = 'I detect a scroll';
+  	console.log('scrolling....');
+  	var btn = document.createElement('h3');
+  	var btnText = document.createTextNode('adding more tags');
+  	btn.appendChild(btnText);
+  	document.body.appendChild(btn);
+  });
+</script>
+</body>
+</html>

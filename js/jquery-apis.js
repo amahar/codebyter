@@ -57,3 +57,7 @@ jQuery(function(){
 	console.log(jQuery('#event-input').data('name'));//data works
 
 
+	var getFoo = $('h3').data('isFoo');
+	console.log(getFoo);
+
+

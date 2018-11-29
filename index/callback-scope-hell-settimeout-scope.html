@@ -1,0 +1,34 @@
+<!-- This is  callback hell. I tried to see if what happens if I don't nest the setTimeout functions
+but when I do then I can't pass variables between them, this is the reason why they have to be nested
+and creates the callback hell -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script>
+	function getRecipe(){
+		setTimeout(function(){
+			var recipeID = [234, 453, 789];
+			console.log(recipeID);
+
+			setTimeout(function(id){
+				var recipe = {title: 'orange juice', publisher: 'Asim'}
+				console.log(id + ': ' + recipe.title + ' publisher:' + recipe.publisher);
+
+				setTimeout(function(publisher){
+					var recipe2 = {title: 'pizza', publisher: 'Sarah'}
+					console.log('publisher for OJ is from the parent setTimeout: ' + publisher);
+				}, 1000, recipe.publisher)
+
+			}, 2000, recipeID[1]);
+
+		}, 2000);
+	}
+	getRecipe(); 
+</script>
+</body>
+</html>

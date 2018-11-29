@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>call back function</title>
+</head>
+<body>
+	<h1>call back function</h1>
+<script>
+	function name1(para1, callback){
+		var local = para1; 
+		callback(local);
+	}
+
+	function name2(local){
+		console.log(local);
+	}
+	
+	name1('hello', name2);
+</script>
+</body>
+</html>

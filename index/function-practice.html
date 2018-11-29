@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function Practice</title>
+</head>
+<body>
+	<h1>Function Practice</h1>
+</body>
+<script type="text/javascript">
+//Let's see different ways of calling function
+
+
+
+//example 1. Write a function that results in this (example is from thinkful)
+var names = ['Bob', 'Brenda', 'Ishmael', 'Earl'];
+var compliment = " is great!";
+
+function complimentGiver(name, comp){
+	var i, arr = [];
+	for(i = 0; i < name.length; i++){
+		arr[i] = name[i] + comp; 
+	}
+	console.log(arr);
+}
+complimentGiver(names,compliment); // Results in
+// ['Bob is great!', 'Brenda is great!', 'Ishmael is great!', 'Earl is great!']
+
+//example 2. Same as above, but using 'push'array to achieve the same results
+function complimentGiver1(name, comp){
+	var i, arr = [];
+	for(i = 0; i < name.length; i++){
+		var val = name[i] + comp;
+		arr.push(val);
+	}
+	console.log(arr);
+}
+complimentGiver1(names, compliment);
+</script>
+</html>

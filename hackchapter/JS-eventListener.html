@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Event Listners</title>
+</head>
+<body>
+	<h3>Click here to win a prize!</h3>
+    <h1></h1>
+</body>
+	<script type="text/javascript">
+        document.querySelector('h3').addEventListener('click', function(){
+            //this.innerHTML = 'Wow, you just programmed an event handler in Javascript';
+            document.querySelector('h1').innerHTML = 'Wow, you just programmed an event handler in Javascript';
+        });
+        
+        document.addEventListener('keypress', function(){
+            document.querySelector('h1').innerHTML = 'I detect a key input';
+        });
+        
+	</script>
+</html>

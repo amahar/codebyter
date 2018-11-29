@@ -1,0 +1,23 @@
+/*stylesheet starts here*/
+
+
+h1 {
+	font-size: 60px;
+    color: orange;
+    text-align: center;
+    text-decoration: line-through;
+}
+ 
+p {
+     font-size: 24px;
+     padding: 20px 45px;  
+    
+}
+
+span {
+	color: purple;
+}
+
+body p {
+	font-size: 40px; 
+}

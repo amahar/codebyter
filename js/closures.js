@@ -90,8 +90,11 @@ function celebrityName (firstName) {
         return nameIntro + firstName + " " + theLastName;
     }
     return lastName;
-}var mjName = celebrityName ("Michael"); // At this juncture, the celebrityName outer function has returned.​
+}
+var mjName = celebrityName ("Michael"); // At this juncture, the celebrityName outer function has returned.​
 console.log(mjName ("Jackson")); // This celebrity is Michael Jackson 
+//we can also do this apparently
+console.log(celebrityName("Michael")("Jackson "));// This celebrity is Michael Jackson 
 
 function celebrityIDCreator (theCelebrities) {
     var i;

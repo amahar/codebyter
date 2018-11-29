@@ -5,13 +5,13 @@
 //event mousedown 
 var objectRef = document.getElementById('event-input');
 
-console.log('obj: ', objectRef);
+console.log('document.getElementById("event-input") is going to be:', objectRef);
 
 objectRef.addEventListener('click', clickHandler);
 //objectRef.addEventListener('mousedown', clickHandler);
 
 function clickHandler(evt) {
-	console.log(evt);
+	console.log('this is clicked event:', evt);
 	 evt.preventDefault();
  //    console.log('mouse was clicked', arguments);
  //    console.log('agr 0 ', arguments[0]);
@@ -33,18 +33,18 @@ var mouseDown = document.getElementById('mouse-down');
 document.addEventListener('mousedown', mousedDowned);
 function mousedDowned (event) {
 
-	console.log(event);
+	console.log('this is mousedowned event:', event);
 	
 	if(event.which == 1) {
-		console.log('left button');
+		console.log('if(event.which == 1) is left button');
 	}
 
 	else if ( event.which == 2 ) {
-		console.log('middle button');
+		console.log('if ( event.which == 2 ) is middle button');
 	}
 
 	else if (event.which == 3){
-		console.log('right button',event.which,event.type);
+		console.log('if (event.which == 3) is right button','event.which =:', event.which, 'event.type =:',event.type);
 	}
 
 }
@@ -53,8 +53,10 @@ function mousedDowned (event) {
 window.addEventListener('load', loaded);
 function loaded (event) {
 
-	console.log(event);
-	console.log(event.target);
+	console.log('this is load event:', event);
+	console.log('this is load event.target:', event.currentTarget);
+	console.log('this is load event.target:', event.target);
+	console.log('this is load event.target:', event.target.charset);
 
 }
 //**********************************

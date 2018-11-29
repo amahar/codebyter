@@ -66,3 +66,5 @@
   };
 
  }(globalVariable));
+
+console.log(globalVariable);

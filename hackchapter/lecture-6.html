@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+<script>
+
+var user = {};
+
+console.log(user.name);
+console.log(user.sport);
+
+console.log(user['team']);
+
+user.teammate = 'scottie pipen';
+console.log(user.teammate);
+
+
+var newUser = {}; 
+
+newUser.player = 'magic johnson';
+
+
+
+var state = {
+     name: 'Virginia',
+     country: 'USA',
+     origin: function () {
+          return 'I am from ' + state.name + ' which is a state of ' + state.country;
+     },
+     counties: ['ffx', 'prince', 'loudon']
+}
+
+console.log(state.origin()); //I am from Virginia which is a state of USA
+
+
+
+var person1 = {
+		firstName: 'John',
+		lastName: 'Smith',
+		coach: 'phil',
+		fullName: function() {
+			return 'Hello ' + this.firstName +  ' '+ this.lastName;
+		}
+}
+
+console.log(person1.fullName());//Hello John Smith
+ 
+
+
+var person2 = Object.create(person1);
+console.log(person2.firstName);//John
+console.log(person2.lastName);//Smith
+console.log(person2.fullName());//Hello John Smith
+
+
+
+person2.firstName = 'larry';
+person2.lastName = 'bird';
+person2.team = 'celtics';
+console.log(person2.fullName()); 
+
+
+var person3 = Object.create(person1);
+person3.firstName = 'kevin';
+person3.lastName = 'durant';
+person3.coach = 'steve kerr';
+console.log(person3.fullName()); 
+
+
+
+
+function Car(car1, car2, car3) {
+  this.work = car1;
+  this.personal = car2;
+  this.family = car3;
+  this.park = function() {
+  	return 'For work I use ' + this.work + ', for personal events I ride the ' +this.personal + ' and for family I use ' + this.family;
+  }
+}
+ 
+var myCars = new Car('Honda', 'Metro', 'Prius');
+
+var fastCars = new Car('scooter', 'mazda', 'lamborghini');
+
+
+console.log(fastCars.park());
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

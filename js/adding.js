@@ -5,6 +5,7 @@ function addNumber(num) {
 	for (i=0;i<=num;i++){
 
 		number = number + i;
+		console.log(number);
 	}
 	console.log(number);
 }

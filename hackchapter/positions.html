@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Positions</title>
+<style type="text/css">
+	body {
+		height: 1200px; 
+		margin: 0px;
+	}
+	.static{
+		width: 200px; 
+		height: 200px; 
+		background-color: yellow; 
+		position: static;
+	}
+	.fixed {
+		width: 200px; 
+		height: 200px; 
+		background-color: pink; 
+		/*position: fixed;*/
+	}
+	.relative {
+		width: 200px; 
+		height: 200px; 
+		background-color: orange; 
+		position: relative;
+		/*left: 200px;*/
+	}
+	.absolute {
+		width: 200px; 
+		height: 200px; 
+		background-color: aqua; 
+		position: absolute;
+		top: 0px; 
+		left: 200px;
+	}
+</style>
+</head>
+<body>
+	<div class="static"></div>
+	<div class="fixed"></div>
+	<div class="relative"></div>
+	<div class="absolute"></div>
+</body>
+</html>

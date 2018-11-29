@@ -57,3 +57,9 @@ $(function(){
 	console.log($('#event-input').data('name'));//data works
 
 
+	//Checking to see if I retrieve a data- attribute value like this 
+	var getFoo = $('h4').data('isfoo');
+	console.log(getFoo);
+
+	//same as above but will try to use vanilla javascript 
+	
