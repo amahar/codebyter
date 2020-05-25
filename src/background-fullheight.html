@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+      .content {
+        flex: 1;
+        background-color: pink;
+        margin: 0px;
+      }
+      header {
+        background-color: red;
+      }
+      footer {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <header>Always at top</header>
+      <div class="content">
+        <h1>full background</h1>
+      </div>
+      <footer>Always at bottom</footer>
+    </div>
+  </body>
+</html>

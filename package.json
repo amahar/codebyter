@@ -1,0 +1,23 @@
+{
+  "name": "codebyter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "att-gvp-trash.js",
+  "scripts": {
+    "format": "prettier \"src/**/*.{js,html,css}\" --write",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amahar/codebyter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amahar/codebyter/issues"
+  },
+  "homepage": "https://github.com/amahar/codebyter#readme",
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
+}

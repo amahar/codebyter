@@ -1,0 +1,154 @@
+<!--Also see the evernotes I have created, its titled 'list of cordinates and scrolls'-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <style type="text/css">
+    body {
+      margin: 0px;
+    }
+    .great-grandfather-one {
+      height: 200px;
+      width: 300px;
+      background-color: #40e054;
+      margin: 10px 10px 10px 20px;
+      padding: 10px 10px 10px 10px;
+    }
+    .grandParent-one {
+      height: 100px;
+      width: 200px;
+      background-color: pink;
+      margin: 10px 10px 10px 20px;
+      padding: 10px 10px 10px 10px;
+    }
+    .parent-one {
+      height: 50px;
+      width: 100px;
+      background-color: turquoise;
+      margin: 10px 10px 10px 20px;
+      padding: 10px 10px 10px 10px;
+    }
+    #location-one {
+      -webkit-margin-before: 0em;
+      -webkit-margin-after: 0em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+    }
+    .grandParent-two {
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+      overflow: auto;
+    }
+    .parent-two {
+      width: 500px;
+      height: 500px;
+      background-color: yellow;
+    }
+
+    #location-two {
+    }
+    .grandParent-three {
+      width: 1600px;
+      height: 800px;
+      background-color: orange;
+      overflow: auto;
+    }
+    .parent-three {
+      width: 800px;
+      height: 800px;
+      background-color: blue;
+    }
+    .grandParent-four {
+      width: 1000px;
+      height: 800px;
+      background-color: lightbrown;
+      overflow: auto;
+    }
+    .parent-four {
+      width: 500px;
+      height: 500px;
+      background-color: lightgrey;
+    }
+  </style>
+  <body>
+    <div class="great-grandfather-one">
+      <div class="grandParent-one">
+        <div class="parent-one">
+          <h1 id="location-one">location</h1>
+        </div>
+      </div>
+    </div>
+
+    <!--create overflow below so scrollTop (and overflow) can be shown how it works-->
+    <div class="grandParent-two">
+      <div class="parent-two">
+        <h1 id="location-two">location</h1>
+      </div>
+    </div>
+
+    <div class="grandParent-three">
+      <div class="parent-three">
+        <h1 id="location-three">location</h1>
+      </div>
+    </div>
+
+    <div class="grandParent-four">
+      <div class="parent-four">
+        <h1 id="location-four">location</h1>
+      </div>
+    </div>
+    <script type="text/javascript">
+      //An example of a loop that traverses the dom to top of the page. It was used for an example for 'element.offsetTop.' Taking from OS, link is in Evernote - titled
+      function getPosition(element) {
+        var xPosition = 0;
+        var yPosition = 0;
+
+        while (element) {
+          xPosition +=
+            element.offsetLeft - element.scrollLeft + element.clientLeft;
+          yPosition +=
+            element.offsetTop - element.scrollTop + element.clientTop;
+          element = element.offsetParent;
+        }
+        return { x: xPosition, y: yPosition };
+      }
+      var el = document.getElementById("location-four");
+      var getVal = getPosition(el);
+      console.log(getVal);
+      console.log("get value x:", getVal.x);
+      console.log("get value y:", getVal.y);
+
+      //scrollTop for an element
+      document
+        .querySelector(".grandParent-two")
+        .addEventListener("scroll", function(e) {
+          var scrollTopElemen = document.querySelector(".grandParent-two")
+            .scrollTop;
+          console.log("scrollTop for an element:", scrollTopElemen);
+        });
+
+      //Vertical position/cordinates of the page
+      window.addEventListener("scroll", function(e) {
+        //scrollTop at page level
+        var scrollTopPage = document.documentElement.scrollTop;
+        console.log("(1)scrollTop for PAGE:", scrollTopPage);
+
+        //pageYOffset is an alias for scrollY ->best browser support
+        var pageYoffset = window.pageYOffset;
+        console.log("(2)pageYOffset:", pageYOffset);
+
+        //scrollY
+        var scrolly = window.scrollY;
+        console.log("(3)scrollY:", scrollY);
+      });
+
+      //window.scroll(x,y): when user clicks, the page pushes down (x,y) times
+      window.addEventListener("click", function() {
+        window.scroll(100, 1000);
+      });
+    </script>
+  </body>
+</html>

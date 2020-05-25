@@ -1,0 +1,16 @@
+<!-- Remember the root one ("/") is the confusing one, because you must know what is the root? I had to run python server locally to access my root path. Otherwise If I run it locally, the root directly gets all screwed up.  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>understanding relative paths</title>
+  </head>
+  <body>
+    <img src="./bruceLee.jpeg" />
+    <img src="../bruceLee.jpeg" />
+
+    <img src="../../bruceLee.jpeg" />
+    <img src="/images/bruceLee.jpeg" />
+    <img src="../../../../images/bruceLee.jpeg" />
+  </body>
+</html>

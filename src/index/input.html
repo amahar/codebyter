@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML inputs</title>
+    <style>
+      .radio input:checked + label {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Ex.Radio buttons
+Things to note: 
+1. If I don't have the "name" attribute, I can select multiple inputs
+2. When an input is checked, we have access to Boolean value "checked" - see the styles      -->
+    <div class="radio">
+      <input type="radio" id="one" name="numbers" value="one" />
+      <label for="one">One</label>
+      <input type="radio" id="two" name="numbers" value="two" />
+      <label for="two">Two</label>
+    </div>
+  </body>
+</html>

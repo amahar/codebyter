@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="”en”">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Specificity</title>
+    <style>
+      h2 {
+        background-color: blue;
+      }
+
+      h1 + h2 {
+        background-color: orange;
+      }
+
+      .cl-spec {
+        background-color: yellow;
+      }
+
+      #id-spec {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>I am an h1 tag</h1>
+      <h2 class="cl-spec" id="id-spec">I am an h2 tag</h2>
+    </div>
+  </body>
+</html>

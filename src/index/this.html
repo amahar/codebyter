@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Understanding 'this'</title>
+  </head>
+  <body></body>
+  <script type="text/javascript">
+    //'this' is created in execution context, and points to globabl object
+    console.log(this); //will point to window object
+
+    //(1)when inside a function, it still points to the global object
+    function foo() {
+      console.log(this); //window object
+    }
+    foo();
+
+    //what if we have an another object in the execution context, where will 'this' point to? To the window object, or the new ojbect we created? Let's find out..
+    var car = {
+      make: "honda",
+      type: "civic"
+    };
+
+    function myCar() {
+      console.log(this); //doesn't call the car object, still points to window object
+      console.log(this.car); //now it calls to the car object.This makes sense becuase 'this' is still in the global context scope.
+    }
+    myCar();
+
+    //(2)when inside a method (function inside an object), 'this' points to the object that is calling the method. And remember, 'this' is not assigned a value, until the method is called.
+    var plane = {
+      make: "Boeing",
+      model: "747",
+      flyme: function() {
+        console.log(`this is my ${this.make} ${this.model}`);
+      }
+    };
+    plane.flyme(); //this is my boeing 747
+
+    //'this' acting weird when calling inside nested functions
+    var person = {
+      name: "asim",
+      daughter: "eshaal",
+      wife: "sarah",
+      mylife: function() {
+        // console.log(`meet my daughter ${this.daughter}`);//meet my dauther eshaal
+        console.log(this.daughter);
+
+        function mywife() {
+          console.log(this); //points to window object, wtf?
+        }
+        mywife();
+      }
+    };
+    person.mylife();
+  </script>
+</html>

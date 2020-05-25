@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Global and execution context</title>
+  </head>
+  <body></body>
+  <script type="text/javascript">
+    var name = "asim";
+
+    function first() {
+      var a = "hi";
+      second();
+      var x = `${a} ${name}`;
+      console.log(x);
+    }
+
+    function second() {
+      var b = "hello";
+      third();
+      var z = `${b} ${name}`;
+      console.log(z);
+    }
+
+    function third() {
+      var c = "hey";
+      var z = `${c} ${name}`;
+      console.log(z);
+    }
+    first();
+
+    //what happens if we change the variable 'name' inside the function, I think it will remain in that execution context. Let's see
+
+    function fourth() {
+      var a = "hi";
+      fifth();
+      var name = "john";
+      var x = `${a} ${name}`; //hi john
+      console.log(x);
+    }
+
+    function fifth() {
+      var b = "hello";
+      sixth();
+      var name = "smith";
+      var z = `${b} ${name}`; // hello smith
+      console.log(z);
+    }
+
+    function sixth() {
+      var c = "hey";
+      var z = `${c} ${name}`; // hey asim
+      console.log(z);
+    }
+    fourth();
+    // so the scope of 'var name' stays local for the execution context.
+  </script>
+</html>

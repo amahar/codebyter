@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul class="list">
+      <li>existing 1</li>
+      <li>existing 2</li>
+    </ul>
+  </body>
+  <script>
+    //Example 1 - creating element in dom using "createTextNode"
+    let elList = document.querySelector(".list");
+    let newLi = document.createElement("li");
+    newLi.setAttribute("id", "id1");
+    let newLiText = document.createTextNode("new element 1");
+    newLi.appendChild(newLiText);
+    elList.appendChild(newLi);
+
+    //Example 2 - creating element in dom using "innerHtml"
+    let elList2 = document.querySelector(".list");
+    let newLi2 = document.createElement("li");
+    newLi2.innerHTML = "new element 2";
+    elList2.appendChild(newLi2);
+
+    let testAfter = document.getElementById("id1");
+
+    let testAfterFunc = function() {
+      console.log("testAfter clicked");
+    };
+    testAfter.addEventListener("click", testAfterFunc);
+
+    // Useful links: https://stackoverflow.com/questions/13122760/is-there-any-major-difference-between-innerhtml-and-using-createtextnode-to-fill
+    //
+  </script>
+</html>

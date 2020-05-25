@@ -1,0 +1,24 @@
+/*Understand the box model while wrapping all the elements with a border*/
+/*Notice the extra margins each box develops from user style css*/
+* {
+  border: 1px solid red;
+}
+
+/*styling for arrow direction start*/
+
+.image::before {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  width: 0;
+  height: 0;
+  margin-bottom: -22px;
+  border-top: 22px solid transparent;
+  border-right: 40px solid #89163e;
+  border-bottom: 22px solid transparent;
+  border-left: 40px solid transparent;
+  z-index: 2;
+}
+
+/*styling for arrow direction end*/

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Listners</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h3>Please fill out the form below:</h3>
+    <form>
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" />
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" />
+      <button type="submit">Submit Form</button>
+    </form>
+    <div>
+      <p class="output"></p>
+    </div>
+
+    <script>
+      $("form").on("submit", function() {
+        event.preventDefault();
+        var valFirst = $("#firstName").val();
+        var valLast = $("#lastName").val();
+        $(".output").text(
+          "Thank you " +
+            valFirst +
+            " " +
+            valLast +
+            " for submitting your request."
+        );
+      });
+    </script>
+  </body>
+</html>

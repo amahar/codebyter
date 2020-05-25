@@ -1,0 +1,29 @@
+<!-- 1)If we want to add a dynamic class to DOM then the best approach is to use, 'getElementByID' to find the element that needs to be targeted. If we use 'getElementsByClassName' then returned elements are a colletion of HTML, and we have to iterate over them, which is not fun. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Getting DOM</title>
+  </head>
+  <body>
+    <div>
+      <button>click here for event listener to fire</button>
+    </div>
+    <div>
+      <h1 class="key">key h1</h1>
+      <h2 class="key">key h2</h2>
+      <h3 class="key">key h3</h3>
+      <h4 class="key">key h4</h4>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var button = document.querySelector("button");
+    button.addEventListener("click", foo);
+
+    function foo() {
+      var key = document.getElementsByClassName("key");
+      console.log(key);
+    }
+  </script>
+</html>

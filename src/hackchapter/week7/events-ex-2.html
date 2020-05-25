@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Enter any key to change this text</h2>
+    <h1></h1>
+    <script>
+      document.addEventListener("keypress", function() {
+        document.querySelector("h1").innerHTML = "I detect a key input";
+      });
+    </script>
+  </body>
+</html>

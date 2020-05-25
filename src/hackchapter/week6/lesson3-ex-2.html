@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Car(car1, car2, car3) {
+        this.work = car1;
+        this.personal = car2;
+        this.family = car3;
+        this.park = function() {
+          return (
+            "For work I use " +
+            this.work +
+            ", for personal events I ride the " +
+            this.personal +
+            " and for family I use " +
+            this.family
+          );
+        };
+      }
+
+      var myCars = new Car("Honda", "Metro", "Prius");
+      console.log(myCars.park());
+
+      var fastCars = new Car("scooter", "mazda", "lamborghini");
+      console.log(fastCars.park());
+    </script>
+  </body>
+</html>

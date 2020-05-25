@@ -1,0 +1,47 @@
+<!-- Helpful Doucmentation:
+https://css-tricks.com/snippets/jquery/smooth-scrolling/
+the below example is taking from BATO project when creating rewiews and ratings page -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <style>
+    .scroll-top {
+      display: none;
+      position: fixed;
+      bottom: 0px;
+      right: 10px;
+      z-index: 999;
+    }
+    .show {
+      display: block;
+    }
+  </style>
+  <body>
+    <h1>
+      Add html here - make sure set the height to be some high enough where
+      scroll event triggers
+    </h1>
+  </body>
+  <script>
+    const btn = document.querySelector(".scroll-top");
+    window.addEventListener("scroll", e => {
+      if (window.scrollY > 50) {
+        btn.classList.add("show");
+      } else {
+        btn.classList.remove("show");
+      }
+    });
+    btn.addEventListener("click", e => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+</html>

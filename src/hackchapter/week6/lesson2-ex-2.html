@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var state = {
+        name: "Virginia",
+        country: "USA",
+        origin: function() {
+          return (
+            "I am from " + state.name + " which is a state of " + state.country
+          );
+        }
+      };
+      state.origin(); //I am from Virginia which is a state of USA
+    </script>
+  </body>
+</html>

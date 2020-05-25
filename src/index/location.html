@@ -1,0 +1,19 @@
+<!-- Tutorial on how to use window.location object -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window.location</title>
+  </head>
+  <body>
+    <script>
+      let hostname = undefined;
+      console.log(hostname);
+      hostname = undefined ? window.location.hostname : "";
+      //   const hostname: string = typeof location !== 'undefined' ? window.location.hostname : '';
+      console.log(window.location);
+      console.log(hostname);
+    </script>
+  </body>
+</html>

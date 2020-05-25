@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>viewport scale testing for mobile and non-mobile</title>
+  </head>
+  <body>
+    <style type="text/css">
+      .rect-1 {
+        width: 800px;
+        height: 100px;
+        background-color: blue;
+      }
+      .rect-2 {
+        width: 1200px;
+        height: 100px;
+        background-color: yellow;
+      }
+      .rect-3 {
+        width: 1600px;
+        height: 100px;
+        background-color: pink;
+      }
+      @media only screen and (max-width: 1020px) {
+        .rect-1 {
+          width: 400px;
+        }
+
+        .rect-2 {
+          width: 600px;
+        }
+
+        .rect-3 {
+          width: 800px;
+        }
+      }
+    </style>
+    <div class="rect-1"></div>
+    <div class="rect-2"></div>
+    <div class="rect-3"></div>
+  </body>
+</html>

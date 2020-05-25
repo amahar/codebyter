@@ -1,0 +1,377 @@
+.parts-search {
+    h1 {
+        margin-left: 5%;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .parts-search-form-wrap {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding: 45px 0px 65px 0;
+        @include media(desktop) {
+            display: flex; 
+        }
+        @include media(lt-desktop) {
+            padding-bottom: 20px;
+        }
+    }
+
+    .form-text {
+        flex: 1 50%;
+
+        .left-column {
+            width: 100%; 
+            @include media(desktop) {
+                width: 60%; 
+            }
+        }
+    }
+
+    .part-search-form{
+        flex: 1 50%;
+        text-align: right;  
+
+        .form-label {
+            &.has-error {
+                color: $firestone-red;
+            }
+        }
+
+        .form-content {
+            position: relative;
+        }
+
+        .form-content label {
+            font-size: 12px;
+            position: absolute;
+            color: black;
+            pointer-events: none;
+            top: 16px; 
+            left: 15px; 
+            color: gray;
+            font-size: 20px;
+            font-family: "avenir-heavy", Helvetica, Arial, sans-serif;
+            transition: margin 0.2s ease,
+              color 0.2s ease,
+              font-size 0.2s ease;
+            &.has-error{
+                color: red;
+                visibility: visible;
+            }
+        }
+
+        .form-content input:focus {
+            outline: none; 
+        }
+
+        .form-content input:focus  + label,
+        .form-content input:active  + label,
+        .form-content input:valid  + label{
+            font-size: 0.7em;
+            top: -6px;
+            margin-left: -2px;
+            background: linear-gradient(180deg, #f8f8f8 50%, #fff 50%);
+            padding: 0px 10px;
+        }
+
+        .form-content p {
+            text-align: left; 
+            margin-left: 15px; 
+            margin-top: 5px; 
+        }
+
+        button {
+            background-image: url(/part-search.svg);
+            background-repeat: no-repeat;
+            background-color: transparent;
+            position: absolute;
+            right: 0px;
+            min-width: inherit;
+            top: 2px;
+            padding: 0px;
+            border: none;
+            width: 52px;
+            height: 52px;
+            cursor: pointer;
+            outline: 0;
+        }
+    
+        input {
+            background-color: #fff;
+            border-radius: 0;
+            border: 2px solid #e3e3e3;
+            height: 52px;
+            width: 100%;
+            font-size: 18px;
+            font-family: "avenir-heavy", Helvetica, Arial, sans-serif;
+        }
+    
+        .partNumberInput {
+
+            &.has-error{
+                border-color: $firestone-red;
+            }
+        }
+    }
+
+    .parts-search-wrap {
+        background-color: #f8f8f8;
+    }
+}
+
+.part-search-results{
+    padding-top: 60px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 60px;
+    h3{
+        color: #595959;
+    }
+        .results-display {
+            display: flex; 
+            flex-wrap: wrap;
+            justify-content: center;
+            @include media(desktop) {
+                justify-content: initial;
+            }
+
+            .product-card {
+                flex: 1 100%; 
+                text-align: center; 
+                padding: 0 1%;
+                max-width: 401px;
+                margin-bottom: 60px; 
+                @include media(tablet) {
+                    flex: 1 50%;
+                }
+                @include media(desktop) {
+                    flex: 1 33.33%;
+                }
+                
+                .gutters {
+
+                    &.item-numb {
+                        border-top: 0px;
+                        padding: 0px;
+                        height: 100px; //was 70
+                        overflow: hidden; 
+                    }
+                    &.height {
+                        height: auto;
+                    }
+                    border-top: 9px solid #ec342e;
+                    box-shadow: 0 0 30px 6px rgba(0,0,0,0.11);
+                    // height: 408px;
+                    // overflow: hidden;
+                    padding: 2% 4%;
+                    position: relative;
+
+                    > h2, p:first-child {
+                        text-align: left; 
+                    }
+
+                    > h2 {
+                        font-size: 24px; 
+                    }
+                    
+                    > p:first-child {
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-bottom: 0px; 
+                    }
+                }
+
+                .horiz-rule {
+                    width: 100%;
+                    height: 1px;
+                    border-bottom: 1px solid #e3e3e3;
+                    position: absolute; 
+                    left: 0px;  
+                }
+
+                .btn-wrap {
+                    margin: 20px 0px; 
+                    
+                    .btn {
+                        padding: 12px; 
+                    }
+                }
+
+                .parts-head {
+                    padding: 10px 0px; 
+                    margin: 0px; 
+                }
+
+            }
+
+            .image-card {
+                position: relative;
+                margin: 0px auto; 
+                padding: 50px 0px; 
+
+                picture {
+                    height: 140px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .zoom {
+                    background-image: url(/part-zoom.svg);
+                    background-repeat: no-repeat;
+                    position: absolute; 
+                    bottom: 0px; 
+                    right: -4.5%; 
+                }
+
+                .no-pic-msg{
+                    display: none;
+                }
+            }
+
+            .flex-table {
+                display: flex; 
+                flex-wrap: wrap;
+                text-align: left; 
+                
+                h5{
+                    text-transform: uppercase; 
+                    font-size: 13px; 
+                    border-bottom: 0px;  
+                }
+
+                h6:first-child, h6:nth-child(2){
+                    height: 100px;
+                }
+
+                h6 {
+                    height: 70px;
+                    font-family: "avenir", Helvetica, Arial, sans-serif;
+                }
+                >* {
+                    flex: 1 50%; 
+                }
+
+                .hidden{
+                    display: none;
+                }
+
+            }
+
+            .btn {
+
+                &.toggle {
+                    width: 100%;
+                    padding: 20px 0px;
+                    text-transform: uppercase;
+                    background-color: #fff;
+                    color: #ec342e;
+                    box-shadow: 0 0 30px 6px rgba(0, 0, 0, 0.11);
+                    padding: 5% 4%;
+                    position: relative;
+                    font-size: 12px;
+                    font-weight: 900;
+                    letter-spacing: 1px;
+                    top: -50px; //new
+                }
+            }
+        }
+
+        .flex-table {
+            display: flex; 
+            flex-wrap: wrap;
+            text-align: left; 
+    
+            > :nth-child(odd) {
+                flex: 1 40%; 
+                border-right: 1px solid #e3e3e3;
+                border-bottom: 1px solid #e3e3e3;
+                margin: 0px;
+                padding: 3% 0px 2% 4%;
+            }
+    
+            > :nth-child(even) {
+                flex: 1 60%;
+                padding-left: 4%; 
+                margin: 0px;
+                padding: 3% 0px 2% 4%;
+                border-bottom: 1px solid #e3e3e3;
+            }
+    
+            > h5:nth-child(1), h5:nth-child(2) {
+                border-bottom: 0px; 
+            }
+    
+            > :last-child, :nth-last-child(2) {
+                border-bottom: 0px; 
+            }
+            
+        }
+
+      /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* The Close Button */
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-img-wrapper{
+            padding: 50px;
+            text-align: center;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {top:-300px; opacity:0} 
+            to {top:0; opacity:1}
+        }
+        
+        @keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }  
+
+}
+
+
+  

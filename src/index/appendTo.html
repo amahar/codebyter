@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <h2 class="append-here"></h2>
+    <h3 class="div"></h3>
+    <script type="text/javascript">
+      $(document).ready(function(e) {
+        $(".div").appendTo(".append-here"); //.div class already exist here
+        $("<h4>new element created</h4>").appendTo("h2");
+      });
+    </script>
+  </body>
+</html>
